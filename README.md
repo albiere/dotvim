@@ -1,7 +1,8 @@
 # Installation
 
     git clone git@github.com:albiere/dotvim.git ~/.vim
-
-# Symlinks
-
     ln -s ~/.vim/vimrc ~/.vimrc
+
+## Plugins
+
+* Vim Rails - https://github.com/tpope/vim-rails
