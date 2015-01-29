@@ -1,10 +1,16 @@
 call pathogen#infect()
 
 " GENERAL SETUP
+filetype plugin indent on
 syntax enable
+
 set background=dark
 set number
 set cursorline
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 " SOLARIZED THEMES
 let g:solarized_termtrans=1
@@ -23,3 +29,6 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
+
+" REMAP FOR EMMET (DEFAULT)
+let g:user_emmet_leader_key='<C-Y>'
