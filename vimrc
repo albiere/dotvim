@@ -33,7 +33,11 @@ endif
 " TREE CONFIGURATION
 let g:netrw_liststyle=3
 let mapleader=" "
-map <leader>k :Explore<cr> 
+map <leader>k :Explore<cr>
 
 " REMAP FOR EMMET (DEFAULT)
 let g:user_emmet_leader_key='<C-Y>'
+
+" AIRLINE CONFIGURATION
+set laststatus=2
+let g:airline_powerline_fonts = 1

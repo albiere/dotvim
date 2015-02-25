@@ -19,3 +19,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "/Users/albiere/.vim/bundle/vim-airline"]
+	path = /Users/albiere/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
