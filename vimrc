@@ -17,7 +17,7 @@ let g:solarized_termtrans=1
 colorscheme solarized
 
 " TAGS
-set tags=./tags
+set tags+=./tags
 
 " WHEN CURSOR WHEN IN INSERT MODE
 if $TERM_PROGRAM =~ "iTerm"
