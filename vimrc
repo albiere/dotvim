@@ -11,6 +11,7 @@ set cursorline
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set noesckeys
 
 " SOLARIZED THEMES
 let g:solarized_termtrans=1
@@ -20,9 +21,14 @@ colorscheme solarized
 set tags+=./tags
 
 " WHEN CURSOR WHEN IN INSERT MODE
-if $TERM_PROGRAM =~ "iTerm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+if &term == 'xterm-256color' || &term == 'screen-256color'
+  let &t_SI = "\<Esc>[5 q"
+  let &t_EI = "\<Esc>[1 q"
+endif
+
+if exists('$TMUX')
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 endif
 
 " TREE CONFIGURATION
