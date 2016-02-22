@@ -11,7 +11,7 @@ set cursorline
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set noesckeys
+set backspace=indent,eol,start
 
 " SOLARIZED THEMES
 let g:solarized_termtrans=1
@@ -54,3 +54,15 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" SYNTASTIC RUBOCOP
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = 1
