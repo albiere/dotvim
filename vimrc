@@ -1,6 +1,8 @@
 call pathogen#infect()
 
 " GENERAL SETUP
+filetype plugin indent on
+
 set background=dark
 set number
 set cursorline
@@ -11,7 +13,10 @@ set shiftwidth=2 " Number of spaces when << >> are pressed
 set expandtab " Hitting tab results in spaces
 set clipboard+=unnamed
 
-filetype plugin indent on
+" GO IDENTATION SETUP
+autocmd FileType go setlocal tabstop=8 softtabstop=0 shiftwidth=8 noexpandtab
+
+" SYNTAX
 syntax enable
 
 if &term == 'xterm-256color' || &term == 'screen-256color'
@@ -48,3 +53,9 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" VIM GO
+let g:go_fmt_command = "goimports"
+
+" ALE CONFIG
+let g:ale_linters = {'go': ['gofmt', 'go lint', 'go vet', 'go build']}
