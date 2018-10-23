@@ -4,8 +4,12 @@ This is my personal vim configuration which includes themes, plugins and some sh
 
 ## Installation
 
-    git clone git@github.com:albiere/dotvim.git ~/.vim
-    ln -s ~/.vim/vimrc ~/.vimrc
+```
+git clone git@github.com:albiere/dotvim.git ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+
+cd ~/.vim && git submodule init && git submodule update
+```
 
 ## Plugins
 
