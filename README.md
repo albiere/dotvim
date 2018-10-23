@@ -21,3 +21,4 @@ cd ~/.vim && git submodule init && git submodule update
 * CtrlP - [https://github.com/kien/ctrlp.vim](https://github.com/kien/ctrlp.vim) 
 * Vim Surround - [https://github.com/tpope/vim-surround](https://github.com/tpope/vim-surround)
 * Vim Airline - [https://github.com/bling/vim-airline](https://github.com/bling/vim-airline)
+* Vim Go - [https://github.com/fatih/vim-go](https://github.com/fatih/vim-go)
