@@ -42,20 +42,13 @@ let g:user_emmet_leader_key='<C-Y>'
 " AIRLINE CONFIGURATION
 set laststatus=2
 
-" THE SILVER SEARCHER
-nmap <silent> <C-N> :cn<CR>zv
-nmap <silent> <C-P> :cp<CR>zv
-
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  
-  " CTRL-P CONFIG
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
-endif
-
 " VIM GO
 let g:go_fmt_command = "goimports"
 
 " ALE CONFIG
 let g:ale_linters = {'go': ['gofmt', 'go lint', 'go vet', 'go build']}
+
+" FZF
+set rtp+=/usr/local/opt/fzf
+nmap <C-t> :Files<CR>
+nmap <C-p> :Files<CR>
