@@ -13,9 +13,6 @@ set shiftwidth=2 " Number of spaces when << >> are pressed
 set expandtab " Hitting tab results in spaces
 set clipboard+=unnamed
 
-" GO IDENTATION SETUP
-autocmd FileType go setlocal tabstop=8 softtabstop=0 shiftwidth=8 noexpandtab
-
 " SYNTAX
 syntax enable
 
@@ -24,9 +21,13 @@ if &term == 'xterm-256color' || &term == 'screen-256color'
   let &t_EI = "\<Esc>[1 q"
 endif
 
-" SOLARIZED THEMES
-let g:solarized_termtrans=1
-colorscheme solarized
+" THEMES
+packadd! dracula_pro
+
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+
+colorscheme dracula_pro
 
 " TAGS
 set tags+=./tags
@@ -35,18 +36,6 @@ set tags+=./tags
 let g:netrw_liststyle=3
 let mapleader=" "
 map <leader>k :Explore<cr>
-
-" REMAP FOR EMMET (DEFAULT)
-let g:user_emmet_leader_key='<C-Y>'
-
-" AIRLINE CONFIGURATION
-set laststatus=2
-
-" VIM GO
-let g:go_fmt_command = "goimports"
-
-" ALE CONFIG
-let g:ale_linters = {'go': ['gofmt', 'go lint', 'go vet', 'go build']}
 
 " FZF
 set rtp+=/usr/local/opt/fzf
