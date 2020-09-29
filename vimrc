@@ -1,8 +1,24 @@
-call pathogen#infect()
+" VIM-PLUG
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdcommenter'
+
+call plug#end() " Automatially calls 'filetype plugin indent on' and 'syntax enable'
+
+" NERD COMMENTER
+nmap <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle<CR>gv
 
 " GENERAL SETUP
-filetype plugin indent on " Turn on detection, plugin and indent
-
 set number
 set cursorline
 
@@ -12,10 +28,17 @@ set shiftwidth=2 " Number of spaces when << >> are pressed
 set expandtab " Hitting tab results in spaces
 set clipboard+=unnamed
 
+set undodir=~/.vimdid                                                                                                                    
+set undofile " Store history in disk
+
+nnoremap confr :source $MYVIMRC<CR>
+nnoremap <leader>ve :e $MYVIMRC<CR> " Edit vimrc configuration file
+nnoremap <leader>vr :source $MYVIMRC<CR> " Reload vimrc configuration file
+
+autocmd InsertEnter,InsertLeave * set cul! " Switch cursor line
+
 " THEMES
 packadd! dracula_pro
-
-syntax enable
 
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
@@ -27,10 +50,9 @@ set tags+=./tags
 
 " TREE CONFIGURATION
 let g:netrw_liststyle=3
-let mapleader=" "
-map <leader>k :Explore<cr>
+nmap <C-k> :Explore<cr>
 
 " FZF
 set rtp+=/usr/local/opt/fzf
-nmap <C-t> :Files<CR>
-nmap <C-p> :Files<CR>
+nmap <C-t> :Files<cr>
+nmap <C-p> :Files<cr>
