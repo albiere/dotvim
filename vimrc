@@ -11,6 +11,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end() " Automatially calls 'filetype plugin indent on' and 'syntax enable'
 
