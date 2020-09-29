@@ -1,9 +1,8 @@
 call pathogen#infect()
 
 " GENERAL SETUP
-filetype plugin indent on
+filetype plugin indent on " Turn on detection, plugin and indent
 
-set background=dark
 set number
 set cursorline
 
@@ -13,16 +12,10 @@ set shiftwidth=2 " Number of spaces when << >> are pressed
 set expandtab " Hitting tab results in spaces
 set clipboard+=unnamed
 
-" SYNTAX
-syntax enable
-
-if &term == 'xterm-256color' || &term == 'screen-256color'
-  let &t_SI = "\<Esc>[5 q"
-  let &t_EI = "\<Esc>[1 q"
-endif
-
 " THEMES
 packadd! dracula_pro
+
+syntax enable
 
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
